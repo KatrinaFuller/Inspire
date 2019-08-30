@@ -1,3 +1,5 @@
+import Quote from "../models/quote.js";
+
 // @ts-ignore
 const _quoteApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
@@ -20,5 +22,18 @@ function _setState(prop, data) {
 
 //TODO create methods to retrieve data trigger the update window when it is complete
 export default class QuoteService {
+	get Quote() {
+		return _state.quotes
+	}
 
+	addSubscriber(prop, fn) {
+		_subscribers[prop].push(fn)
+	}
+
+	getQuote() {
+		console.log('Getting a quote')
+		_quoteApi.get().then(res => {
+			_setState('quotes', new Quote(res.data))
+		})
+	}
 }

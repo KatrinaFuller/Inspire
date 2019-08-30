@@ -3,6 +3,6 @@
   font-size: 2em;
 }
 
-.bg-image{
-  background-image: 
+.card{
+  background-color: rgb(255, 255, 255, .2);
 }
