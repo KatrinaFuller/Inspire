@@ -2,7 +2,7 @@
 
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/katrina/todos/',
 	timeout: 3000
 });
 
@@ -34,6 +34,7 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
+
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
