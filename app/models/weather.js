@@ -7,8 +7,19 @@ export default class Weather {
 
     //TODO You should probably convert the temperature data to either F or C
     //      check out the other data that comes back and see if there is anything you want to try
-
+    // this.temp = (this.kelvin - 273.15) * 9 / 5 + 32
     this.city = data.name
     this.kelvin = data.main.temp
+  }
+
+  get Template() {
+    return `
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title">${this.kelvin}</h5>
+            <p class="card-text">${this.city}</p>
+        </div>
+      </div>
+    `
   }
 }
