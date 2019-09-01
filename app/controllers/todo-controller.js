@@ -45,6 +45,7 @@ export default class TodoController {
 		}
 		_todoService.addTodo(todo)
 		_drawTodos()
+		form.reset()
 	}
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be toggled

@@ -75,10 +75,12 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
-		todoApi.removeTodo(todoId)
+		console.log("MADE IT HERE")
+
+		todoApi.delete(todoId)
 			.then(res => {
-				let index = _state.todos.findIndex(t => t._id == todoId)
-				_state.todos.splice(index, 1)
+
+				_state.todos.splice(todoId, 1)
 				_setState('todos', _state.todos)
 			})
 			.catch(err => { console.error(err) })
