@@ -9,7 +9,7 @@ export default class Todo {
         <div class="card-body">
           <p class="card-text">${this.description}</p>
         </div>
-        <button class="btn btn-success" onclick="app.controllers.todoController.addTodo()">Add Todo</button>
+        
       </div>
     `
   }

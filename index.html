@@ -21,14 +21,18 @@
 	</div>
 
 	<div class="todo">
-		<button class="btn btn-light">Todo</button>
 		<div id="todo-error"></div>
-		<!-- form onsubmit moved to model -->
-		<div>
-			<div>header 1 of 9</div>
-			<div id="todos">hi</div>
-			<div>button bar(buttons go here)</div>
-		</div>
+
+		<form onsubmit="app.controllers.todoController.addTodo(event)">
+			<div id="todos"></div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="description" placeholder="New Todo"> <button class="btn btn-success"
+					type="submit">Add</button>
+
+
+			</div>
+		</form>
+		<button class="btn btn-light">Todo</button>
 
 	</div>
 
@@ -37,4 +41,8 @@
 </body>
 
 </html>
-<html>
+<!-- <html> -->
+
+<!-- <div>header 1 of 9</div>
+<div id="todos">hi</div>
+<div>button bar(buttons go here)</div> -->

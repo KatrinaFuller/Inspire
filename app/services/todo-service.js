@@ -40,7 +40,9 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
-				_setState('todos', res.data.data)
+				let todoData = res.data.data.map(t => new Todo(t))
+				_setState('todos', todoData)
+				console.log("MADE IT HERE")
 				console.log(res.data.data)
 			})
 			.catch(err => _setState('error', err.response.data))
@@ -50,7 +52,7 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				_state.todos.push(new Todo(res.data.data))
+				_state.todos.push(res.data.data)
 				_setState('todos', _state.todos)
 			})
 			.catch(err => _setState('error', err.response.data))
@@ -73,6 +75,13 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+		todoApi.removeTodo(todoId)
+			.then(res => {
+				let index = _state.todos.findIndex(t => t._id == todoId)
+				_state.todos.splice(index, 1)
+				_setState('todos', _state.todos)
+			})
+			.catch(err => { console.error(err) })
 	}
 
 }
