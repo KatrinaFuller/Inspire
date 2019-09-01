@@ -16,7 +16,7 @@ export default class Weather {
   get Template() {
     return `
 
-            <h5>${this.temp} F</h5>
+            <h5>${this.temp} °F</h5>
             <p>${this.city}</p>
 
     `
