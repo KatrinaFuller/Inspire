@@ -58,6 +58,8 @@ export default class TodoController {
 		_todoService.removeTodo(todoId)
 	}
 
-
+	showTodos() {
+		_todoService.showTodos()
+	}
 
 }

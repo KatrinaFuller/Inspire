@@ -9,8 +9,8 @@ export default class Todo {
     return `
       <div class="card">
         <div class="card-body">
-          <p class="card-text">${this.description}</p>
-          <button class="btn-danger" onclick="app.controllers.todoController.removeTodo('${this._id}')"> X </button>
+          <p class="card-text">${this.description} <button class="btn danger little-x" onclick="app.controllers.todoController.removeTodo('${this._id}')"> X </button></p>
+          
         </div>
 
         

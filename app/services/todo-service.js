@@ -86,4 +86,13 @@ export default class TodoService {
 			.catch(err => { console.error(err) })
 	}
 
+	showTodos() {
+		let show = document.getElementById('show-todos')
+		if (show.style.display === "none") {
+			show.style.display = "block"
+		} else {
+			show.style.display = "none"
+		}
+	}
+
 }
