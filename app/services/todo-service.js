@@ -1,3 +1,5 @@
+import Todo from "../models/todo.js";
+
 //NOTE your service is all set up for the observer pattern but there is still work to be done
 
 // @ts-ignore
@@ -21,6 +23,10 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
+	get Todos() {
+		return _state.todos.map(t => new Todo(t))
+	}
+
 	get TodoError() {
 		return _state.error
 	}
@@ -34,7 +40,8 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
-
+				_setState('todos', res.data.data)
+				console.log(res.data.data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -43,6 +50,8 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				_state.todos.push(new Todo(res.data.data))
+				_setState('todos', _state.todos)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

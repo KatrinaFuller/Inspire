@@ -5,7 +5,12 @@ export default class Todo {
 
   get Template() {
     return `
-    <form onsubmit="app.controllers.todoController"></form>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">${this.description}</p>
+        </div>
+        <button class="btn btn-success" onclick="app.controllers.todoController.addTodo()">Add Todo</button>
+      </div>
     `
   }
 }

@@ -6,3 +6,20 @@
 .card{
   background-color: rgb(255, 255, 255, .2);
 }
+
+.weather{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.todo{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.quote{
+  position: absolute;
+  bottom: 0;
+}

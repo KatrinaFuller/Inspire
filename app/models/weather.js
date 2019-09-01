@@ -14,12 +14,10 @@ export default class Weather {
 
   get Template() {
     return `
-      <div class="card">
-         <div class="card-body">
-            <h5 class="card-title">${this.kelvin}</h5>
-            <p class="card-text">${this.city}</p>
-        </div>
-      </div>
+
+            <h5>${this.kelvin}</h5>
+            <p>${this.city}</p>
+
     `
   }
 }

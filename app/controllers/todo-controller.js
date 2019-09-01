@@ -4,6 +4,19 @@ const _todoService = new TodoService()
 
 //TODO Create the render function
 function _drawTodos() {
+	let elem = document.getElementById('todos')
+	let todos = _todoService.Todos
+	// console.log(todos)
+	if (todos.length === 0) {
+		// todo list is empty
+		elem.innerHTML = "<p>No Todos</p>"
+	} else {
+		let template = '<ul>'
+		todos.forEach(t => {
+			template += t.Template
+		})
+		elem.innerHTML = template + '</ul>'
+	}
 
 }
 
@@ -16,6 +29,9 @@ function _drawError() {
 export default class TodoController {
 	constructor() {
 		//TODO Remember to register your subscribers
+		_todoService.addSubscriber('todos', _drawTodos)
+		// _todoService.getTodos()
+
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
 	}
@@ -25,8 +41,10 @@ export default class TodoController {
 		var form = e.target
 		var todo = {
 			//TODO build the todo object from the data that comes into this method
+			description: form.description.value
 		}
 		_todoService.addTodo(todo)
+		_drawTodos()
 	}
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be toggled
