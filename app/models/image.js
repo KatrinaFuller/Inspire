@@ -1,7 +1,7 @@
 
 export default class Image {
   constructor(data) {
-    this.image = data.url
+    this.image = data.url || data.large_url
   }
 
   get Template() {
