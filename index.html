@@ -25,15 +25,18 @@
 
 		<form id="show-todos" onsubmit="app.controllers.todoController.addTodo(event)">
 			<div id="todos"></div>
-			<div class="form-group">
-				<input type="text" class="form-control" id="description" placeholder="New Todo"> <button class="btn btn-success"
-					type="submit">Add</button>
-
-
+			<div class="input-group">
+				<input type="text" class="form-control" id="description" placeholder="New Todo">
+				<div class="input-group-append">
+					<button class="btn btn-success" type="submit">Add</button>
+				</div>
 			</div>
 		</form>
-		<button class="btn btn-light" onclick="app.controllers.todoController.showTodos()">Todo</button>
+	</div>
 
+	<br>
+	<div>
+		<button class="btn btn-light todo-button" onclick="app.controllers.todoController.showTodos()">Todo</button>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
