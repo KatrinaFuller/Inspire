@@ -11,7 +11,8 @@ function _drawTodos() {
 		// todo list is empty
 		elem.innerHTML = "<p>No Todos</p>"
 	} else {
-		let template = '<ul>'
+		let count = `<h6 class="todo-header">${todos.length} Todo</h6>`
+		let template = count + '<ul>'
 		todos.forEach(t => {
 			template += t.Template
 		})
@@ -44,7 +45,7 @@ export default class TodoController {
 			description: form.description.value
 		}
 		_todoService.addTodo(todo)
-		_drawTodos()
+
 		form.reset()
 	}
 
