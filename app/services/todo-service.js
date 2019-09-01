@@ -88,9 +88,9 @@ export default class TodoService {
 
 	showTodos() {
 		let show = document.getElementById('show-todos')
-		if (show.style.display === "none") {
+		if (show.style.display === "none" || show.style.display === "") {
 			show.style.display = "block"
-		} else {
+		} else if (show.style.display === "block") {
 			show.style.display = "none"
 		}
 	}

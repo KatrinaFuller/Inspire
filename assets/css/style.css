@@ -24,6 +24,12 @@
   color: white;
 }
 
+.todo{
+  position: absolute;
+  bottom: 55px;
+  right: 0;
+}
+
 .quote{
   position: absolute;
   bottom: 0;
@@ -31,6 +37,12 @@
 
 .little-x{
   color: red;
+}
+
+#show-todos{
+  display: none;
+  background-color: black;
+  opacity:0.9;
 }
 
 
