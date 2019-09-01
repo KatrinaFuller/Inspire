@@ -51,5 +51,7 @@
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
+  background-position-x: center;
+  background-position-y: center;
 }
 

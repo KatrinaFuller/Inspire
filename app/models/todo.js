@@ -7,14 +7,7 @@ export default class Todo {
 
   get Template() {
     return `
-      <div class="card todo-card">
-        <div class="card-body">
-          <p class="card-text">${this.description} <button class="btn danger little-x" onclick="app.controllers.todoController.removeTodo('${this._id}')"> X </button></p>
-          
-        </div>
-
-        
-      </div>
+          <p class="todo-card">${this.description} <button class="btn danger little-x" onclick="app.controllers.todoController.removeTodo('${this._id}')"> X </button></p>
     `
   }
 }
