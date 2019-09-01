@@ -7,15 +7,16 @@ export default class Weather {
 
     //TODO You should probably convert the temperature data to either F or C
     //      check out the other data that comes back and see if there is anything you want to try
-    // this.temp = (this.kelvin - 273.15) * 9 / 5 + 32
-    this.city = data.name
     this.kelvin = data.main.temp
+    this.converted = ((this.kelvin - 273.15) * 1.8) + 32
+    this.temp = Math.round(this.converted * 10) / 10
+    this.city = data.name
   }
 
   get Template() {
     return `
 
-            <h5>${this.kelvin}</h5>
+            <h5>${this.temp} F</h5>
             <p>${this.city}</p>
 
     `
