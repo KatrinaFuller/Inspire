@@ -33,6 +33,12 @@
 .quote{
   position: absolute;
   bottom: 0;
+  padding: 0px 50px;
+  /* background-color: brown; */
+  width: 800px;
+  text-align: center;
+  left: calc(50vw - 400px);
+
 }
 
 .little-x{
@@ -67,3 +73,4 @@
 .todo-completed{
   text-decoration: line-through;
 }
+

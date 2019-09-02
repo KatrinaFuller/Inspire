@@ -6,11 +6,11 @@ export default class Quote {
 
   get Template() {
     return `
-      <div class="card" id="card">
-         <div class="card-body">
-            <h5 class="card-title">${this.quote}</h5>
-            <p class="card-text">${this.author}</p>
-        </div>
+      <div>
+         
+            <h5>${this.quote}</h5>
+            <p>${this.author}</p>
+      
       </div>
     `
   }
