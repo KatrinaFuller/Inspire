@@ -11,7 +11,14 @@ function _drawTodos() {
 		// todo list is empty
 		elem.innerHTML = "<p>No Todos</p>"
 	} else {
-		let count = `<h6 class="todo-header">${todos.length} Todo</h6>`
+		// Count the number of todos that have completed set to false
+		let remainingTodos = 0; // count here
+		for (let i = 0; i < todos.length; i++) {
+			if (todos[i].completed === false) {
+				remainingTodos++;
+			}
+		}
+		let count = `<h6 class="todo-header">${remainingTodos} Todo</h6>`
 		let template = count + '<ul>'
 		todos.forEach(t => {
 			template += t.Template
@@ -51,7 +58,8 @@ export default class TodoController {
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be toggled
 	toggleTodoStatus(todoId) {
-		_todoService.toggleTodoStatus(todoId)
+		_todoService.toggleTodoStatus(todoId);
+		_drawTodos();
 	}
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be deleted
