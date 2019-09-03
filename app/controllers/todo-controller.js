@@ -12,18 +12,16 @@ function _drawTodos() {
 		elem.innerHTML = "<p>No Todos</p>"
 	} else {
 		// Count the number of todos that have completed set to false
+		let template = '<ul>'
 		let remainingTodos = 0; // count here
-		for (let i = 0; i < todos.length; i++) {
-			if (todos[i].completed === false) {
-				remainingTodos++;
-			}
-		}
-		let count = `<h6 class="todo-header">${remainingTodos} Todo</h6>`
-		let template = count + '<ul>'
 		todos.forEach(t => {
 			template += t.Template
+			if (t.completed === false) {
+				remainingTodos++;
+			}
 		})
-		elem.innerHTML = template + '</ul>'
+		let count = `<h6 class="todo-header">${remainingTodos} Todo</h6>`
+		elem.innerHTML = count + template + '</ul>'
 	}
 
 }
